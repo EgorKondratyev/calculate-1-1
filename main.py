@@ -11,7 +11,7 @@ async def foo(first_num: int = 0, second_num: int = 0) -> str:
 
 async def main():
     task_one = asyncio.create_task(
-        foo(1, 1)
+        foo(1, 2)
     )
 
     await task_one
