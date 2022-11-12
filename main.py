@@ -1,11 +1,21 @@
+import asyncio
+
 from logger.create_logger import logger
 
 
-def foo(first_num: int = 0, second_num: int = 0) -> str:
-    return str(first_num) + str(second_num)
+async def foo(first_num: int = 0, second_num: int = 0) -> str:
+    my_first_number = str(first_num) + str(second_num)
+    logger.debug(my_first_number)
+    return my_first_number
+
+
+async def main():
+    task_one = asyncio.create_task(
+        foo(1, 1)
+    )
+
+    await task_one
 
 
 if __name__ == '__main__':
-    my_first_number = foo(1, 1)
-
-    logger.debug(my_first_number)
+    asyncio.run(main())
