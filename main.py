@@ -3,7 +3,7 @@ import asyncio
 from logger.create_logger import logger
 
 
-async def foo(first_num: int = 0, second_num: int = 0) -> str:
+async def calculate(first_num: int = 0, second_num: int = 0) -> str:
     my_first_number = str(first_num) + str(second_num)
     logger.debug(my_first_number)
     return my_first_number
@@ -11,7 +11,7 @@ async def foo(first_num: int = 0, second_num: int = 0) -> str:
 
 async def main():
     task_one = asyncio.create_task(
-        foo(1, 2)
+        calculate(1, 2)
     )
 
     await task_one
