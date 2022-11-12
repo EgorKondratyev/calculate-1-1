@@ -6,6 +6,6 @@ def foo(first_num: int = 0, second_num: int = 0) -> str:
 
 
 if __name__ == '__main__':
-    my_first_number = foo(1, 1)
+    my_first_number = foo(1, 2)
 
     logger.debug(my_first_number)
